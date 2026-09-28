@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Part 3001 three ways, like the logo: side, top, bottom -->
+  <g fill="#E8231A" stroke="#131A21" stroke-width="2.4" stroke-linejoin="round">
+    <path d="M13 20V9h2.6V5.5h5.8V9h3.4V5.5h5.8V9h3.4V5.5h5.8V9h3.4V5.5h5.8V9H51v11z"/>
+    <rect x="13" y="22.5" width="38" height="18" rx="1"/>
+    <rect x="13" y="43" width="38" height="18" rx="1"/>
+    <rect x="16.5" y="46.5" width="31" height="11" rx=".5" fill="#8F0F08" stroke-width="1.6"/>
+  </g>
+  <g fill="none" stroke="#131A21" stroke-width="1.8">
+    <circle cx="18.5" cy="27.5" r="2.6"/><circle cx="27.5" cy="27.5" r="2.6"/><circle cx="36.5" cy="27.5" r="2.6"/><circle cx="45.5" cy="27.5" r="2.6"/>
+    <circle cx="18.5" cy="35.5" r="2.6"/><circle cx="27.5" cy="35.5" r="2.6"/><circle cx="36.5" cy="35.5" r="2.6"/><circle cx="45.5" cy="35.5" r="2.6"/>
+  </g>
+  <g fill="#E8231A" stroke="#131A21" stroke-width="1.6">
+    <circle cx="23" cy="52" r="3.4"/><circle cx="32" cy="52" r="3.4"/><circle cx="41" cy="52" r="3.4"/>
+  </g>
+</svg>

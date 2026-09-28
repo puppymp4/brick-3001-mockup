@@ -1,0 +1,4 @@
+# Concept build by Rift Media. The shop's live site is brick3001.com.
+# At handoff: replace with "Allow: /" and remove the noindex meta tags.
+User-agent: *
+Disallow: /
