@@ -139,6 +139,22 @@
     }
   }
 
+  /* Sponsor credit: count every click through to Rift Media as a
+     "Sponsor credit click" event in Vercel Web Analytics. The link opens a
+     new tab, so this page stays open long enough to send it. */
+  const creditClick = (e) => {
+    if (e.type === 'auxclick' && e.button !== 1) return;
+    if (typeof window.va !== 'function') return;
+    window.va('event', {
+      name: 'Sponsor credit click',
+      data: { site: 'brick3001', page: window.location.pathname === '/' ? 'home' : 'not-found' },
+    });
+  };
+  $$('[data-sponsor-credit]').forEach((a) => {
+    a.addEventListener('click', creditClick);
+    a.addEventListener('auxclick', creditClick);
+  });
+
   /* Footer year */
   $$('[data-year]').forEach((el) => { el.textContent = String(new Date().getFullYear()); });
 })();

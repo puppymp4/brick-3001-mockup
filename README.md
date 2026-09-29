@@ -96,6 +96,23 @@ Checked against lego.com/legal/notices-and-policies/fair-play:
 5. **Photos.** Everything is from @brick3001fresno. A fresh wide shot from the front door looking in
    would make a better hero than the setup-week photo used now.
 
+## Sponsor credit tracking
+
+The footer credit ("Website sponsored by Rift Media", also on the 404 page) is how this free site
+pays Rift back, so it is measured:
+
+- **Link:** `https://www.riftmedia.cc/?utm_source=brick3001&utm_medium=referral&utm_campaign=sponsored_site&utm_content=footer_credit`.
+  It goes straight to `www`, skipping the 307 from the apex. The UTM tags only show in Vercel's
+  reports with the Web Analytics Plus add-on ($10/mo), or in any analytics later added to riftmedia.cc.
+- **Click count:** each click fires a Vercel Web Analytics custom event named
+  `Sponsor credit click` with `site` and `page` (`home` or `not-found`). This is the number that
+  matters, and it works on the standard Pro plan. The handler is in `main.js`.
+- **Page views:** Web Analytics is enabled on the `brick-3001-mockup` project (cookieless). It
+  counts visits too, which becomes a monthly report to give Bryce and Nick after handoff.
+- **Report:** `node rm-os/Sponsored/_scripts/credit-clicks.mjs` (add `30` for the last 30 days).
+
+Cost is Vercel's per-event rate on Pro, about $0.03 per 1,000 events.
+
 ## Stack
 
 Plain HTML, CSS and JavaScript. No build step, no dependencies. Vercel with `cleanUrls`.
@@ -127,6 +144,8 @@ npx serve .
 - [ ] Remove the "Concept build" line from the footer
 - [ ] Point brick3001.com at Vercel (their domain is on Turbify/Yahoo DNS today)
 - [ ] Update `og:image` and schema URLs from brick3001.riftmedia.cc to www.brick3001.com
-- [ ] Keep "Website sponsored by Rift Media" in the footer
+- [ ] Keep "Website sponsored by Rift Media" in the footer, with its `data-sponsor-credit` tracking
+- [ ] Tell them the site counts visits with Vercel's cookieless analytics, and offer a monthly report
+- [ ] Change `utm_source` only if you want the domain move to show separately (optional)
 
 Built by Rift Media, 2026.
